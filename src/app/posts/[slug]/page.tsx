@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import parse from 'html-react-parser';
 import { getDetail, getList } from '@/src/libs/microcms';
+import Image from 'next/image';
 
 export async function generateStaticParams() {
   const { contents } = await getList();
@@ -20,9 +21,8 @@ export default async function StaticDetailPage({
   params: { slug: string };
 }) {
   const data = await getDetail(slug);
-
-  // ページの生成された時間を取得
-  const time = new Date().toLocaleString();
+  const updatedAt = data.updatedAt;
+  const update = updatedAt.substring(0, 10);
 
   if (!data) {
     notFound();
@@ -30,8 +30,10 @@ export default async function StaticDetailPage({
 
   return (
     <div>
-      <h1>{data.title}</h1>
-      <h2>{time}</h2>
+      <p>更新日：{update}</p>
+      <h2>{data.title}</h2>
+      <Image alt={data.title} src={data.thumbnail.url} width={1200} height={700} />
+      {data.title}
       <div>{parse(data.content)}</div>
       <a href="/">トップに戻る</a>
     </div>
