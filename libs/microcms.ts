@@ -7,6 +7,8 @@ export type Blog = {
   title: string;
   content: string;
   eyecatch?: MicroCMSImage;
+  date: string;
+  description: string;
 } & MicroCMSDate;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
