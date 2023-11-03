@@ -1,4 +1,5 @@
 import { getList } from '../libs/microcms';
+import Image from 'next/image';
 
 export default async function Home() {
   const { contents } = await getList();
@@ -10,16 +11,16 @@ export default async function Home() {
   return (
     <div>
       <ul>
-        {contents.map((post) => {
-          const updatedAt = post.updatedAt;
+        {contents.map((data) => {
+          const updatedAt = data.updatedAt;
           const update = updatedAt.substring(0, 10);
 
           return (
-            <li key={post.id}>
-              <a href={`/posts/${post.id}`}>
+            <li key={data.id}>
+              <a href={`/posts/${data.id}`}>
                 <div>
-                  <img alt={post.title} src={post.eyecatch?.url} width={1200} height={700} />
-                  {post.title}
+                  <Image alt={data.title} src={data.thumbnail.url} width={1200} height={700} />
+                  {data.title}
                   <p>更新日：{update}</p>
                 </div>
               </a>
