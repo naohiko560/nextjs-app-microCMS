@@ -3,21 +3,26 @@ import { getList } from '../libs/microcms';
 export default async function Home() {
   const { contents } = await getList();
 
-  // ページの生成された時間を取得
-  const time = new Date().toLocaleString();
-
   if (!contents || contents.length === 0) {
     return <h1>コンテンツがありません！</h1>;
   }
 
   return (
     <div>
-      <h1>{time}</h1>
       <ul>
         {contents.map((post) => {
+          const updatedAt = post.updatedAt;
+          const update = updatedAt.substring(0, 10);
+
           return (
             <li key={post.id}>
-              <a href={`/posts/${post.id}`}>{post.title}</a>
+              <a href={`/posts/${post.id}`}>
+                <div>
+                  <img alt={post.title} src={post.eyecatch?.url} width={1200} height={700} />
+                  {post.title}
+                  <p>更新日：{update}</p>
+                </div>
+              </a>
             </li>
           );
         })}
