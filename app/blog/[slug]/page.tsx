@@ -1,16 +1,13 @@
 import { notFound } from 'next/navigation';
 import parse from 'html-react-parser';
-import { getDetail, getList } from '../../../libs/microcms';
-
-// キャッシュを利用しない
-export const revalidate = 60;
+import { getDetail, getList } from '@/libs/microcms';
 
 export async function generateStaticParams() {
   const { contents } = await getList();
 
   const paths = contents.map((post) => {
     return {
-      postId: post.id,
+      slug: post.id,
     };
   });
 
@@ -18,11 +15,11 @@ export async function generateStaticParams() {
 }
 
 export default async function StaticDetailPage({
-  params: { postId },
+  params: { slug },
 }: {
-  params: { postId: string };
+  params: { slug: string };
 }) {
-  const post = await getDetail(postId);
+  const post = await getDetail(slug);
 
   // ページの生成された時間を取得
   const time = new Date().toLocaleString();
@@ -36,6 +33,7 @@ export default async function StaticDetailPage({
       <h1>{post.title}</h1>
       <h2>{time}</h2>
       <div>{parse(post.content)}</div>
+      <a href="/">トップに戻る</a>
     </div>
   );
 }
