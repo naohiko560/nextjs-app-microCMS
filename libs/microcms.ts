@@ -1,6 +1,5 @@
 import { createClient } from 'microcms-js-sdk';
 import type { MicroCMSQueries, MicroCMSImage, MicroCMSDate } from 'microcms-js-sdk';
-import { resolve } from 'path';
 
 // ブログの型定義
 export type Blog = {
@@ -10,8 +9,8 @@ export type Blog = {
   eyecatch?: MicroCMSImage;
 } & MicroCMSDate;
 
-if (!process.env.MICROCMS_API_DOMAIN) {
-  throw new Error('MICROCMS_API_DOMAIN は必須です');
+if (!process.env.MICROCMS_SERVICE_DOMAIN) {
+  throw new Error('MICROCMS_SERVICE_DOMAIN は必須です');
 }
 
 if (!process.env.MICROCMS_API_KEY) {
@@ -20,7 +19,7 @@ if (!process.env.MICROCMS_API_KEY) {
 
 // API取得用のクライアントを作成
 export const client = createClient({
-  serviceDomain: process.env.MICROCMS_API_DOMAIN,
+  serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
   apiKey: process.env.MICROCMS_API_KEY,
 });
 
