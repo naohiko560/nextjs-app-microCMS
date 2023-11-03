@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import parse from 'html-react-parser';
 import { getDetail, getList } from '@/src/libs/microcms';
 import Image from 'next/image';
+import styles from '../../styles/posts.module.scss'
 
 export async function generateStaticParams() {
   const { contents } = await getList();
@@ -29,12 +30,17 @@ export default async function StaticDetailPage({
   }
 
   return (
-    <div>
-      <p>更新日：{update}</p>
-      <h2>{data.title}</h2>
+    <div className={styles.main}>
+      <h1 className={styles.title}>{data.title}</h1>
+      <p className={styles.updatedAt}>更新日：{update}</p>
       <Image alt={data.title} src={data.thumbnail.url} width={1200} height={700} />
       {data.title}
-      <div>{parse(data.content)}</div>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `${data.content}`,
+        }}
+        className={styles.post}
+      />
       <a href="/">トップに戻る</a>
     </div>
   );
