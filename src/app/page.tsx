@@ -1,33 +1,31 @@
+import Link from 'next/link';
 import { getList } from '../libs/microcms';
 import Image from 'next/image';
 
 export default async function Home() {
   const { contents } = await getList();
 
-  if (!contents || contents.length === 0) {
-    return <h1>コンテンツがありません！</h1>;
-  }
-
   return (
-    <div>
-      <ul>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="border border-violet-200 p-4 rounded-md shadow-md bg-white">
         {contents.map((data) => {
           const updatedAt = data.updatedAt;
           const update = updatedAt.substring(0, 10);
 
           return (
-            <li key={data.id}>
-              <a href={`/posts/${data.id}`}>
-                <div>
+            <div key={data.id}>
+              <Link href={`posts/${data.id}`}>
+                <div className="md:hover:underline">
                   <Image alt={data.title} src={data.thumbnail.url} width={1200} height={700} />
-                  {data.title}
-                  <p>更新日：{update}</p>
+                  <h2 className="font-bold text-violet-600 mt-1">{data.title}</h2>
                 </div>
-              </a>
-            </li>
+              </Link>
+              <p className="text-sm text-slate-400 mt-1">{update}</p>
+              <p className="text-slate-700 mt-1">{data.description}</p>
+            </div>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }

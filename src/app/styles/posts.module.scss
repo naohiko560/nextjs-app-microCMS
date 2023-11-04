@@ -1,43 +1,84 @@
-.main {
-  width: 1000px;
-  margin: 0 auto;
-  padding-right: 15px;
-  padding-left: 15px;
-  box-sizing: border-box;
-}
+.posts_inner {
+  font-size: 19px;
+  background-color: #fff;
 
-.title {
-  margin-bottom: 20px;
-}
-
-.updatedAt {
-  margin-bottom: 40px;
-}
-
-.post {
-  &>h1 {
-    font-size: 30px;
-    font-weight: bold;
-    margin: 40px 0 20px;
-    background-color: #eee;
-    padding: 10px 20px;
-    border-radius: 5px;
+  .updatedAt {
+    margin-bottom: 0;
+    text-align: center;
   }
 
-  &>h2 {
-    font-size: 24px;
+  .title {
+    font-size: 36px;
     font-weight: bold;
-    margin: 40px 0 16px;
-    border-bottom: 1px solid #ddd;
+    text-align: center;
+    margin: 10px 0 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 1.5;
+
+    @media screen and (max-width: 768px) {
+      font-size: 28px;
+    }
   }
 
-  &>p {
+  h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 10px solid blue;
+    line-height: 1.5;
+    background-color: #f7f7f7;
+  }
+
+  h3 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 20px 0 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-left: 10px solid blue;
+    line-height: 1.5;
+  }
+
+  p {
     line-height: 1.8;
     letter-spacing: 0.2px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
-  &>ol {
+  a {
+    font-weight: bold;
+    color: #337ab7;
+  }
+
+  ol {
     list-style-type: decimal;
     list-style-position: inside;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding: 50px;
+    margin-top: 20px;
+    margin-bottom: 36px;
+    background-color: #f8f9ff;
+    border: dashed 1px #4865b2;
+
+    li {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .intro {
+    margin-bottom: 10px;
   }
 }
