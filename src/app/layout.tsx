@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './styles/globals.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import Burger from '../components/Burger';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -119,7 +120,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja">
       {/* <GoogleAnalytics /> */}
       <body className="body">
-        {/* <Burger /> */}
+        <Burger />
         <div className="box-content">
           {header}
           <main className="main px-6 box-content">
