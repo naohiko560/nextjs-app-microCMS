@@ -123,7 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="box-content">
           {header}
           <main className="main px-6 box-content">
-            <div className="main-inner mx-auto max-w-5xl bg-white pt-5 pr-10 pl-10 box-content">{children}</div>
+            <div className="main-inner mx-auto max-w-5xl bg-white pt-10 pb-10 pr-10 pl-10 box-content">{children}</div>
           </main>
           {footer}
         </div>
