@@ -20,10 +20,10 @@ jobs:
         node-version: 18.12.1
     - run: touch .env
     - run: echo "API_KEY=${{ secrets.MICROCMS_API_KEY }}" >> .env
-    - name: yarn install, build
+    - name: npm install, build
       run: |
-           yarn install
-           yarn build
+           npm install
+           npm build
     - name: deploy to Firebase Hosting
       uses: w9jds/firebase-action@master
       with:
