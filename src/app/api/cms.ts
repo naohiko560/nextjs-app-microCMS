@@ -3,7 +3,7 @@ export default async function Cms(req: any, res: any) {
 		const crypto = require('crypto');
 		const requestBody = typeof req.body === 'object' ? JSON.stringify(req.body) : req.body;
 		const expectedSignature = crypto
-      .createHmac('sha256', process.env.MICROCMS_SECRET)
+      .createHmac('sha256', TpGPYBQZxvCKdCFwPMArwc7ra9TjcP)
       .update(requestBody)
       .digest('hex');
 		let signature = req.headers['X-MICROCMS-Signature'] || req.headers['x-microcms-signature'];
