@@ -1,13 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export',
+  output: 'export',
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.microcms-assets.io',
-      },
-    ],
+    unoptimized: true, // 画像最適化を行わない
+    // remotePatterns: [
+    //   {
+    //     protocol: 'https',
+    //     hostname: 'images.microcms-assets.io',
+    //   },
+    // ],
   },
 };
 
