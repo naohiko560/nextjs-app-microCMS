@@ -33,8 +33,8 @@ jobs:
       # 以下、ssgの場合: ssg ビルド
       - name: Generate static page
         env:
-          MICROCMS_SERVICE_DOMAIN: process.env.MICROCMS_SERVICE_DOMAIN
-          MICROCMS_API_KEY: process.env.MICROCMS_API_KEY
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
         run: npm run generate
       # Firebase にデプロイ
       - name: Deploy to Firebase
