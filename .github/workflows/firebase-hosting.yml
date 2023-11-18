@@ -27,9 +27,9 @@ jobs:
       # 依存パッケージのインストール
       - name: Install Dependencies
         run: npm install
-      # プロジェクトごとの　npm のビルドコマンド
+      # プロジェクトごとの npm のビルドコマンド
       - name: Build
-        run: npm run build
+        run: npm run generate
       # 以下、ssgの場合: ssg ビルド
       - name: Generate static page
         env:
