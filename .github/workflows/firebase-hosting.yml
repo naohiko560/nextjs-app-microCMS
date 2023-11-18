@@ -29,7 +29,7 @@ jobs:
         run: npm install
       # プロジェクトごとの　npm のビルドコマンド
       - name: Build
-        run: npm run generate
+        run: npm run build
       # 以下、ssgの場合: ssg ビルド
       - name: Generate static page
         env:
