@@ -17,7 +17,7 @@ jobs:
     steps:
       # リポジトリをチェックアウト
       - name: Checkout Repo
-        # uses: actions/checkout@master
+        # uses: actions/checkout@main
         uses: actions/checkout@v2
       # Node.js のセット
       - name: Use Node.js
@@ -38,7 +38,7 @@ jobs:
         run: npm run generate
       # Firebase にデプロイ
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+        uses: w9jds/firebase-action@main
         with:
           args: deploy --only hosting --project=${{ secrets.FIREBASE_PROJECT_ID }}
         env:
