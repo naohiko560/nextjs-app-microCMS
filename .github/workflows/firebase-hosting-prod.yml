@@ -1,48 +1,32 @@
-name: Build and Deploy
+name: Node.js CI
+
 on:
-  # mainブランチへプッシュされたタイミングで実行
   push:
-    branches: [main]
-  # microCMS から GitHub Actions に Webhook 通知が飛んできたタイミングで実行
+    branches: [ "main" ]
   repository_dispatch:
-    # []の中は、microCMS の Webhook　設定で設定したトリガーイベント名
-    types: [update-posts]
+    branches: [ "main" ]
+    types: [update_example]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
+
     steps:
-      # リポジトリをチェックアウト
-      - name: Checkout Repo
-        # uses: actions/checkout@master
-        uses: actions/checkout@v2
-      # Node.js のセット
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      # 依存パッケージのインストール
-      - name: Install Dependencies
-        run: npm install
-      # プロジェクトごとの npm のビルドコマンド
-      - name: Build
-        env:
-          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
-          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
-        run: npm run build
-      # 以下、ssgの場合: ssg ビルド
-      - name: Generate static page
-        env:
-          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
-          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
-        run: npm run export
-      # Firebase にデプロイ
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting --project=${{ secrets.FIREBASE_PROJECT_ID }}
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: 18.12.1
+    - run: touch .env
+    - run: echo "API_KEY=${{ secrets.MICROCMS_API_KEY }}" >> .env
+    - name: yarn install, build
+      run: |
+           yarn install
+           yarn build
+    - name: deploy to Firebase Hosting
+      uses: w9jds/firebase-action@master
+      with:
+        args: deploy
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
