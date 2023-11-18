@@ -18,7 +18,8 @@
     "react": "^18",
     "react-burger-menu": "^3.0.9",
     "react-dom": "^18",
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "serve": "^14.2.1"
   },
   "devDependencies": {
     "@types/node": "^20",
