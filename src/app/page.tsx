@@ -18,7 +18,6 @@ export default async function Home() {
               <h2 className="font-bold text-violet-600 mt-1">{data.title}</h2>
               <p className="text-sm text-slate-400 mt-1">{update}</p>
               <p className="text-slate-700 mt-1">{data.description}</p>
-              <p>test</p>
             </div>
           </Link>
         );
