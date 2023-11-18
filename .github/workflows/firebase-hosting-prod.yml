@@ -38,7 +38,7 @@ jobs:
         env:
           MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
-        run: npm run build
+        run: npm run export
       # Firebase にデプロイ
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
