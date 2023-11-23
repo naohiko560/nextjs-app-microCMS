@@ -14,7 +14,6 @@ export default async function Home() {
         return (
           <Link href={`posts/${data.id}`} key={data.id} className="md:hover:underline">
             <div className="border border-violet-200 p-4 rounded-md shadow-md bg-white">
-              {/* <Image alt={data.title} src={data.thumbnail.url} width={1200} height={700} /> */}
               <h2 className="font-bold text-violet-600 mt-1">{data.title}</h2>
               <p className="text-sm text-slate-400 mt-1">{update}</p>
               <p className="text-slate-700 mt-1">{data.description}</p>

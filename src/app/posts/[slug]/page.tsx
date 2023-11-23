@@ -28,7 +28,6 @@ export default async function StaticDetailPage({ params: { slug } }: { params: {
     <div className={styles.posts_inner}>
       <p className={styles.updatedAt}>更新日：{update}</p>
       <h1 className={styles.title}>{data.title}</h1>
-      {/* <Image alt={data.title} src={data.thumbnail.url} width={1200} height={700} /> */}
       <div
         dangerouslySetInnerHTML={{
           __html: `${data.content}`,
