@@ -88,5 +88,7 @@ export async function og({ params: { slug } }: { params: { slug: string } }) {
         height: 630,
       }
     );
+  } else {
+    return new Response('Not Found', { status: 404 });
   }
 }
