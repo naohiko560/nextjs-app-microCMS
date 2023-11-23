@@ -55,6 +55,7 @@ export const metadata: Metadata = {
     creator: twitter,
     // images: ogImageUrl,
   },
+  metadataBase: new URL(process.env.URL ?? 'http://localhost:3000'),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
