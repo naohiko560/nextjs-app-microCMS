@@ -13,8 +13,8 @@ const inter = Inter({ subsets: ['latin'] });
 const siteName = 'Nhackblog';
 const description =
   'プログラミングの学習方法や経験の中で得た知見、便利ツールなどを中心に発信するテックブログです。';
-const siteUrl = '/';
-const ogImageUrl = '/images/common/home_page.jpg';
+const siteUrl = 'https://nhackblog.com/';
+// const ogImageUrl = 'https://nhackblog.com/images/common/home_page.jpg';
 
 // ナビゲーションバーの設定
 const menu1 = 'トップ';
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     description: description,
     url: siteUrl,
     siteName: siteName,
-    images: [
-      {
-        url: ogImageUrl,
-        width: 1800,
-        height: 1600,
-        alt: '当サイトのOG画像',
-      },
-    ],
+    // images: [
+    //   {
+    //     url: ogImageUrl,
+    //     width: 1800,
+    //     height: 1600,
+    //     alt: '当サイトのOG画像',
+    //   },
+    // ],
     locale: 'ja_JP',
     type: 'website',
   },
