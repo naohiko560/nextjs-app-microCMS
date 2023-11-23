@@ -5,7 +5,7 @@ import { getDetail, getList } from '@/src/libs/microcms';
 export const runtime = 'edge';
 
 // 有効期間
-export const revalidate = 10;
+// export const revalidate = 10;
 
 export const alt = 'OGP画像';
 export const size = {
