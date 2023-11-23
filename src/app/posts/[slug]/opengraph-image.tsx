@@ -82,8 +82,11 @@ export async function og({ params: { slug } }: { params: { slug: string } }) {
             ✏️ OG Image Examples
           </div>
         </div>
-      )
+      ),
+      {
+        width: 1200,
+        height: 630,
+      }
     );
   }
-  return {};
 }
