@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     description: description,
     site: twitter,
     creator: twitter,
-    images: ogImageUrl,
+    // images: ogImageUrl,
   },
 };
 
