@@ -14,24 +14,24 @@ export const revalidate = 10;
 //   height: 630,
 // };
 
-export const contentType = 'image/png';
+// export const contentType = 'image/png';
 
-export async function generateStaticParams() {
-  const { contents } = await getList();
+// export async function generateStaticParams() {
+//   const { contents } = await getList();
 
-  const paths = contents.map((data) => {
-    return {
-      slug: data.id,
-    };
-  });
+//   const paths = contents.map((data) => {
+//     return {
+//       slug: data.id,
+//     };
+//   });
 
-  return [...paths];
-}
+//   return [...paths];
+// }
 
-export async function og({ params: { slug } }: { params: { slug: string } }) {
-  const post = await getDetail(slug);
+export async function og() {
+  // const post = await getDetail(slug);
 
-  if (post) {
+  // if (post) {
     return new ImageResponse(
       (
         // <div
@@ -78,14 +78,14 @@ export async function og({ params: { slug } }: { params: { slug: string } }) {
         //     ✏️ OG Image Examples
         //   </div>
         // </div>
-        <div>{post.title}</div>
+        <div>test</div>
         // {
         //   width: 1200,
         //   height: 630,
         // }
       )
     );
-  } else {
-    return new Response('Not Found', { status: 404 });
-  }
+  // } else {
+  //   return new Response('Not Found', { status: 404 });
+  // }
 }
