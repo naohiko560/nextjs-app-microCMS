@@ -4,6 +4,7 @@ import './styles/globals.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import Burger from '../components/Burger';
+import GoogleAnalytics from '../components/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -118,7 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="ja">
-      {/* <GoogleAnalytics /> */}
+      <GoogleAnalytics />
       <body className="body">
         <Burger />
         <div className="box-content">
