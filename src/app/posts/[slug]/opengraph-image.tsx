@@ -14,34 +14,28 @@ export const size = {
 };
 export const contentType = 'image/png';
 
+// Image generation
 export default async function Image() {
+  // Font
+  // const interSemiBold = fetch(
+  //   new URL('./Inter-SemiBold.ttf', import.meta.url)
+  // ).then((res) => res.arrayBuffer())
+ 
   return new ImageResponse(
     (
+      // ImageResponse JSX element
       <div
         style={{
-          fontSize: 48,
+          fontSize: 128,
           background: 'white',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
           width: '100%',
           height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
-        <div style={{ height: 40, backgroundColor: '#5AC8D8', width: '100%' }} />
-        <h1
-          style={{
-            flex: 1,
-            maxWidth: '80%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          これはOGP画像です。
-        </h1>
-        <div style={{ height: 40, backgroundColor: '#5AC8D8', width: '100%' }} />
+        About Acme
       </div>
     ),
     {
