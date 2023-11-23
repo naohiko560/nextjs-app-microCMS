@@ -8,11 +8,11 @@ export const runtime = 'edge';
 export const revalidate = 10;
 
 // 画像の設定
-export const alt = '記事のアイキャッチ画像';
-export const size = {
-  width: 1200,
-  height: 630,
-};
+// export const alt = '記事のアイキャッチ画像';
+// export const size = {
+//   width: 1200,
+//   height: 630,
+// };
 
 export const contentType = 'image/png';
 
@@ -79,11 +79,11 @@ export async function og({ params: { slug } }: { params: { slug: string } }) {
         //   </div>
         // </div>
         <div>{post.title}</div>
-      ),
-      {
-        width: 1200,
-        height: 630,
-      }
+        // {
+        //   width: 1200,
+        //   height: 630,
+        // }
+      )
     );
   } else {
     return new Response('Not Found', { status: 404 });
