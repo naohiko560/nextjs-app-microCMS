@@ -13,8 +13,8 @@ const inter = Inter({ subsets: ['latin'] });
 const siteName = 'Nhackblog';
 const description =
   'プログラミングの学習方法や経験の中で得た知見、便利ツールなどを中心に発信するテックブログです。';
-const siteUrl = 'https://www.nhackblog.com/';
-const ogImageUrl = 'https://www.nhackblog.com/images/common/home_page.jpg';
+const siteUrl = '/';
+const ogImageUrl = '/images/common/home_page.jpg';
 
 // ナビゲーションバーの設定
 const menu1 = 'トップ';
