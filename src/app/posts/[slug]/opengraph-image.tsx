@@ -2,10 +2,10 @@ import { ImageResponse } from 'next/og';
 import { getDetail, getList } from '@/src/libs/microcms';
 
 // ImageResponse対応
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 // 有効期間
-export const revalidate = 10;
+export const revalidate = 'force-cache';
 
 export const alt = 'OGP画像';
 export const size = {
