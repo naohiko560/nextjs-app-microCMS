@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import { getDetail, getList } from '@/src/libs/microcms';
-import Image from 'next/image';
 import styles from '../../styles/posts.module.scss';
 
 export async function generateStaticParams() {

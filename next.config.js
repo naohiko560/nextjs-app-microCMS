@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  trailingSlash: true, // リロードしても404を出さない
   images: {
     unoptimized: true, // 画像最適化を行わない
     // remotePatterns: [
