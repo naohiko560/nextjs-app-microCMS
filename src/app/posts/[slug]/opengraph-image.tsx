@@ -16,10 +16,6 @@ export const size = {
 
 export const contentType = 'image/png';
 
-type Props = {
-  params: { id: string };
-};
-
 export async function generateStaticParams() {
   const { contents } = await getList();
 
@@ -38,50 +34,51 @@ export async function og({ params: { slug } }: { params: { slug: string } }) {
   if (post) {
     return new ImageResponse(
       (
-        <div
-          style={{
-            backgroundImage: 'url(/images/common/og-frame.jpg)',
-            backgroundColor: '#fff',
-            backgroundSize: '100% 100%',
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            textAlign: 'left',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            flexWrap: 'nowrap',
-          }}
-        >
-          <div
-            style={{
-              width: '100%',
-              fontSize: 60,
-              fontStyle: 'normal',
-              fontWeight: 'bold',
-              color: '#000',
-              padding: '0 120px',
-              lineHeight: 1.3,
-              marginBottom: '30px',
-              wordWrap: 'break-word',
-            }}
-          >
-            {post.title}
-          </div>
-          <div
-            style={{
-              width: '100%',
-              fontSize: 40,
-              fontStyle: 'normal',
-              fontWeight: 'bold',
-              color: '#000',
-              padding: '0 120px',
-              lineHeight: 1.3,
-            }}
-          >
-            ✏️ OG Image Examples
-          </div>
-        </div>
+        // <div
+        //   style={{
+        //     backgroundImage: 'url(/images/common/og-frame.jpg)',
+        //     backgroundColor: '#fff',
+        //     backgroundSize: '100% 100%',
+        //     height: '100%',
+        //     width: '100%',
+        //     display: 'flex',
+        //     textAlign: 'left',
+        //     alignItems: 'flex-start',
+        //     justifyContent: 'center',
+        //     flexDirection: 'column',
+        //     flexWrap: 'nowrap',
+        //   }}
+        // >
+        //   <div
+        //     style={{
+        //       width: '100%',
+        //       fontSize: 60,
+        //       fontStyle: 'normal',
+        //       fontWeight: 'bold',
+        //       color: '#000',
+        //       padding: '0 120px',
+        //       lineHeight: 1.3,
+        //       marginBottom: '30px',
+        //       wordWrap: 'break-word',
+        //     }}
+        //   >
+        //     {post.title}
+        //   </div>
+        //   <div
+        //     style={{
+        //       width: '100%',
+        //       fontSize: 40,
+        //       fontStyle: 'normal',
+        //       fontWeight: 'bold',
+        //       color: '#000',
+        //       padding: '0 120px',
+        //       lineHeight: 1.3,
+        //     }}
+        //   >
+        //     ✏️ OG Image Examples
+        //   </div>
+        // </div>
+        <div>{post.title}</div>
       ),
       {
         width: 1200,
