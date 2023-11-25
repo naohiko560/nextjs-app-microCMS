@@ -5,7 +5,7 @@ import { load } from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/hybrid.css';
 
-// ビルド時に静的にルートを生成
+// ビルド時、静的にルートを生成
 export async function generateStaticParams() {
   const { contents } = await getList();
 

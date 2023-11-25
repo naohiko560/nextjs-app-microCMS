@@ -78,7 +78,9 @@
     }
   }
 
-  .intro {
-    margin-bottom: 10px;
+  // microCMSのカスタムCSS
+  .mb-s {
+    display: block;
+    margin-bottom: -35px;
   }
 }
