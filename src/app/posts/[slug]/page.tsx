@@ -60,7 +60,6 @@ export default async function StaticDetailPage({ params: { slug } }: { params: {
         dangerouslySetInnerHTML={{
           __html: `${data.content}`,
         }}
-        className="mt-5 mb-5 content-body"
       />
       <a href="/">トップに戻る</a>
     </div>
