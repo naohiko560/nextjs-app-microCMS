@@ -4,6 +4,7 @@ import styles from '../../styles/posts.module.scss';
 import { load } from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/hybrid.css';
+import type { Metadata } from 'next';
 
 // ビルド時、静的にルートを生成
 export async function generateStaticParams() {
@@ -16,6 +17,21 @@ export async function generateStaticParams() {
   });
 
   return [...paths];
+}
+
+// 記事ごとにタイトル・ディスクリプションを設定
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const data = await getDetail(slug);
+  const title = data.title;
+
+  return {
+    title: title,
+    description: title,
+  };
 }
 
 export default async function StaticDetailPage({ params: { slug } }: { params: { slug: string } }) {
