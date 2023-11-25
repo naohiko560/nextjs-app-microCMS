@@ -1,6 +1,9 @@
 import { notFound } from 'next/navigation';
 import { getDetail, getList } from '@/src/libs/microcms';
 import styles from '../../styles/posts.module.scss';
+import { load } from 'cheerio';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/hybrid.css';
 
 // ビルド時に静的にルートを生成
 export async function generateStaticParams() {
@@ -15,10 +18,19 @@ export async function generateStaticParams() {
   return [...paths];
 }
 
-export default async function StaticDetail({ params: { slug } }: { params: { slug: string } }) {
+export default async function StaticDetailPage({ params: { slug } }: { params: { slug: string } }) {
   const data = await getDetail(slug);
   const updatedAt = data.updatedAt;
   const update = updatedAt.substring(0, 10);
+
+  // シンタックスハイライト
+  const $ = load(data.content);
+  $('pre code').each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text());
+    $(elm).html(result.value);
+    $(elm).addClass('hljs');
+  });
+  data.content = $.html();
 
   if (!data) {
     notFound();
