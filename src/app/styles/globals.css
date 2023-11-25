@@ -10,3 +10,9 @@
   background-color: #fff;
   height: 36px;
 }
+
+/* microCMSのカスタムCSS */
+.mb-s {
+  display: block;
+  margin-bottom: -35px;
+}
