@@ -4,7 +4,12 @@ import '../styles/globals.css';
 const ContactPage = () => {
   return (
     <div>
-      <iframe src={process.env.GMAIL} width="100%" height="1100" className="bg-white"></iframe>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLScRNPUgNveGZ39s6GJfdU0pssX0t72ak-qstSKJHJY2mVmGKw/viewform?usp=sf_link"
+        width="100%"
+        height="1100"
+        className="bg-white"
+      ></iframe>
     </div>
   );
 };
