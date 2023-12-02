@@ -4,7 +4,7 @@
 
 ## 制作物のURL
 
-https://nhackblog.com/
+[https://nhackblog.com/](https://nhackblog.com/){:target="_blank"}
 
 <br>
 
