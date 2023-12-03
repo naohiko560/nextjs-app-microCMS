@@ -52,7 +52,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <header className="header bg-white">
       <div className="flex items-center space-x-5 py-5 mx-auto max-w-6xl box-content pr-10 pl-10">
         <Link href={'/'} className="md:hover:text-gray-600">
-          <h1 className="text-3xl font-bold">{siteName}</h1>
+          <h1 className="text-3xl font-bold">
+            <Image alt={siteName} src="/images/common/logo.png" width={150} height={40} />
+          </h1>
         </Link>
       </div>
       <div className="bg-blue-400 pt-1 pb-1">
