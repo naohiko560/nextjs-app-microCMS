@@ -55,6 +55,7 @@ export default async function StaticDetailPage({ params: { slug } }: { params: {
   return (
     <div className={styles.posts_inner}>
       <p className={styles.updatedAt}>更新日：{update}</p>
+      <p className={styles.category}>{data.category.name}</p>
       <h1 className={styles.title}>{data.title}</h1>
       <div
         dangerouslySetInnerHTML={{

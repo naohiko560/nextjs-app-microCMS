@@ -5,6 +5,7 @@ import type { MicroCMSQueries, MicroCMSImage, MicroCMSDate } from 'microcms-js-s
 export type Blog = {
   id: string;
   title: string;
+  category: any;
   content: string;
   thumbnail: MicroCMSImage;
   description: string;
