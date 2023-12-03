@@ -53,7 +53,7 @@ export default async function StaticDetailPage({ params: { slug } }: { params: {
   }
 
   return (
-    <div className={styles.posts_inner}>
+    <div>
       <p className={styles.updatedAt}>更新日：{update}</p>
       <p className={styles.category}>{data.category.name}</p>
       <h1 className={styles.title}>{data.title}</h1>
@@ -61,6 +61,7 @@ export default async function StaticDetailPage({ params: { slug } }: { params: {
         dangerouslySetInnerHTML={{
           __html: `${data.content}`,
         }}
+        className={styles.posts_inner}
       />
       <a href="/">トップに戻る</a>
     </div>

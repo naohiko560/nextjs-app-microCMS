@@ -117,8 +117,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Burger />
         <div className="box-content">
           {header}
-          <main className="main px-6 box-content">
-            <div className="main-inner mx-auto max-w-5xl bg-white pt-10 pb-10 pr-10 pl-10 box-content">
+          <main className="main md:px-6 px-4 box-content">
+            <div className="main-inner mx-auto max-w-5xl md:bg-white md:pt-10 pt-1 pb-10 md:pr-10 md:pl-10 pr-0 pl-0 box-content">
               {children}
             </div>
           </main>
