@@ -5,6 +5,7 @@ import { load } from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/hybrid.css';
 import type { Metadata } from 'next';
+import Link from 'next/dist/client/link';
 
 // ビルド時、静的にルートを生成
 export async function generateStaticParams() {
@@ -63,7 +64,7 @@ export default async function StaticDetailPage({ params: { slug } }: { params: {
             __html: `${data.content}`,
           }}
         />
-        <a href="/">トップに戻る</a>
+      <Link href="/">トップに戻る</Link>
       </div>
     </div>
   );
