@@ -54,7 +54,10 @@ export const metadata: Metadata = {
     creator: snsSet.x,
   },
   metadataBase: new URL(process.env.URL ?? 'http://localhost:3000'),
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
