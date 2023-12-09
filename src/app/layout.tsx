@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const header = (
-    <header className="header bg-white">
+    <header className="header bg-white mb-5 md:mb-10">
       <div className="flex justify-center md:justify-normal items-center space-x-5 py-5 mx-auto max-w-6xl box-content pr-10 pl-10">
         <Link href={'/'} className="md:hover:text-gray-600">
           <h1 className="text-3xl font-bold">
@@ -104,7 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   const footer = (
     <footer>
-      <div className="border-t border-slate-500 mt-9 mb-3 py-5 text-center text-slate-400">
+      <div className="border-t border-slate-500 mt-5 md:mt-10 mb-3 py-5 text-center text-slate-400">
         <h3>Developed by Naohiko</h3>
       </div>
     </footer>
@@ -113,12 +113,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja">
       <GoogleAnalytics />
-      <body className="body">
+      <body className="bg-gray-50">
         <Burger />
         <div className="box-content">
           {header}
           <main className="main md:px-6 px-4 box-content">
-            <div className="main-inner mx-auto max-w-5xl bg-white md:pt-10 pt-5 pb-10 md:pr-10 md:pl-10 pr-0 pl-0 box-content">
+            <div className="main-inner mx-auto max-w-5xl bg-gray-50 md:bg-white md:pt-10 md:pr-10 md:pl-10 pr-0 pl-0 box-content">
               {children}
             </div>
           </main>

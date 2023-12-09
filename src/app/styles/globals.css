@@ -6,15 +6,6 @@ html {
   scrollbar-gutter: stable;
 }
 
-.body {
-  background-color: #f7f7f7;
-}
-
-.header-bg {
-  background-color: #fff;
-  height: 36px;
-}
-
 /* microCMSのカスタムCSS */
 .mb-s {
   display: block;

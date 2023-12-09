@@ -61,7 +61,7 @@
   padding-bottom: 10px;
   border-left: 10px solid blue;
   line-height: 1.5;
-  background-color: #f7f7f7;
+  background-color: #F9FAFB;
 }
 @media screen and (max-width: 768px) {
   .posts_inner h2 {
