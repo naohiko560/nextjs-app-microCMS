@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import Image from 'next/image';
-import Link from 'next/dist/client/link';
+import Link from 'next/link';
 import { snsSet } from '../layout';
 
 const ProfilePage = () => {
@@ -8,15 +8,13 @@ const ProfilePage = () => {
     <div className="px-2 py-5">
       <div className="flex items-center space-x-5">
         <div className="image">
-          <Link href="/">
-            <Image
-              alt="プロフィール"
-              src="/images/common/profile.jpg"
-              width={80}
-              height={80}
-              className="mx-auto rounded-full"
-            />
-          </Link>
+          <Image
+            alt="プロフィール"
+            src="/images/common/profile.jpg"
+            width={80}
+            height={80}
+            className="mx-auto rounded-full"
+          />
         </div>
         <div>
           <h2 className="text-lg font-bold">なおひこ@ITエンジニア</h2>
@@ -39,8 +37,8 @@ const ProfilePage = () => {
           <div className="px-2 py-8 grid-cols-1 grid md:grid-cols-3 md:gap-4 border-t border-gray-700">
             <dt className="font-bold">アカウント</dt>
             <dd className="md:col-span-2 sm:mt-1 md:mt-0">
-              <ul className="">
-                <li className="">
+              <ul className="text-lg">
+                <li className="mt-5">
                   <Link
                     href={snsSet.x}
                     className="no-underline md:hover:underline md:hover:text-blue-400 text-blue-500 font-bold"
@@ -50,7 +48,7 @@ const ProfilePage = () => {
                     X
                   </Link>
                 </li>
-                <li className="mt-3">
+                <li className="mt-8">
                   <Link
                     href={snsSet.gitHub}
                     className="no-underline md:hover:underline md:hover:text-blue-400 text-blue-500 font-bold"
