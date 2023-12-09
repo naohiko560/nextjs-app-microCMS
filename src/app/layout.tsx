@@ -21,7 +21,7 @@ export const navSet = {
   menu3: 'お問い合わせ',
   menu4: 'X',
   menu5: 'gitHub',
-}
+};
 
 // SNS
 export const snsSet = {
@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     creator: snsSet.x,
   },
   metadataBase: new URL(process.env.URL ?? 'http://localhost:3000'),
+  robots: {
+    index: true,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
