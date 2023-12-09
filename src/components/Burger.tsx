@@ -32,8 +32,14 @@ class Burger extends React.Component {
           <a id="contact" className="" href="/contact">
             お問い合わせ
           </a>
-          <a id="twitter" className="" href="" target="_blank" rel="noopener nofollow">
-            Twitter
+          <a
+            id="x"
+            className=""
+            href="https://twitter.com/naohiko_blog"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            X
           </a>
           <a
             id="github"

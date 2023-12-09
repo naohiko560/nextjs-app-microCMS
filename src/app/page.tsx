@@ -12,7 +12,11 @@ export default async function Home() {
 
 
         return (
-          <Link href={`posts/${data.id}/`} key={data.id} className="md:hover:underline">
+          <Link
+            href={`posts/${data.id}/`}
+            key={data.id}
+            className="md:hover:underline"
+          >
             <div className="border border-violet-200 p-4 rounded-md shadow-md bg-white">
               <h2 className="font-bold text-violet-600 mt-1">{data.title}</h2>
               <p className="text-sm text-slate-400 mt-1">{update}</p>

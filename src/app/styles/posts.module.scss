@@ -17,7 +17,7 @@ $breakpoints: (
 }
 
 /*=====================================================================
-# スタイル
+# 記事コンテンツ
 ==================================================================== */
 .updatedAt {
   text-align: center;
@@ -105,6 +105,17 @@ $breakpoints: (
   a {
     font-weight: bold;
     color: #337ab7;
+
+    @include mq (pc) {
+      transition-property: opacity;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+      transition-timing-function: linear;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
 
     @include mq (sp) {
       font-size: 16px;

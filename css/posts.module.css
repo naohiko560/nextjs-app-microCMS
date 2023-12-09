@@ -3,7 +3,7 @@
 # ブレークポイント
 ==================================================================== */
 /*=====================================================================
-# スタイル
+# 記事コンテンツ
 ==================================================================== */
 .updatedAt {
   text-align: center;
@@ -94,6 +94,17 @@
 .posts_inner a {
   font-weight: bold;
   color: #337ab7;
+}
+@media screen and (min-width: 769px) {
+  .posts_inner a {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    transition-timing-function: linear;
+  }
+  .posts_inner a:hover {
+    opacity: 0.8;
+  }
 }
 @media screen and (max-width: 768px) {
   .posts_inner a {

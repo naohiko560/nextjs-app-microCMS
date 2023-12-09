@@ -45,7 +45,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* General sidebar styles */
 .bm-menu {
   background: white;
-  padding: 2.5em 1.5em 0;
+  padding: 2.5em 0;
   font-size: 1.15em;
 }
 
@@ -66,9 +66,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: inline-block;
   text-decoration: none;
   outline: none;
-  padding-top: 0.4em;
-  padding-bottom: 0.4em;
-  width: 150px;
+  padding: 1em 0;
+  width: 210px;
+  border-top: 1px solid #333;
+}
+
+.bm-item:last-child {
+  border-bottom: 1px solid #333;
 }
 
 /* Styling of overlay */
