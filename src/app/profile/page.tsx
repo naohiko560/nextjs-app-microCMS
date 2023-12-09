@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import Image from 'next/image';
 import Link from 'next/dist/client/link';
+import { snsSet } from '../layout';
 
 const ProfilePage = () => {
   return (
@@ -41,17 +42,17 @@ const ProfilePage = () => {
               <ul className="">
                 <li className="">
                   <Link
-                    href="#"
+                    href={snsSet.x}
                     className="no-underline md:hover:underline md:hover:text-blue-400 text-blue-500 font-bold"
                     target="_blank"
                     rel="noopener nofollow"
                   >
-                    Twitter
+                    X
                   </Link>
                 </li>
                 <li className="mt-3">
                   <Link
-                    href="https://github.com/naohiko560"
+                    href={snsSet.gitHub}
                     className="no-underline md:hover:underline md:hover:text-blue-400 text-blue-500 font-bold"
                     target="_blank"
                     rel="noopener nofollow"
