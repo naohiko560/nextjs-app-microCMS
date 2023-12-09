@@ -4,7 +4,7 @@ import Link from 'next/dist/client/link';
 
 const ProfilePage = () => {
   return (
-    <div className="mt-9">
+    <div className="px-2 py-5">
       <div className="flex items-center space-x-5">
         <div className="image">
           <Link href="/">
@@ -23,7 +23,7 @@ const ProfilePage = () => {
       </div>
       <div className="">
         <dl className="mt-8">
-          <div className="py-8 grid-cols-1 grid md:grid-cols-3 md:gap-4 border-t border-gray-700">
+          <div className="px-2 py-8 grid-cols-1 grid md:grid-cols-3 md:gap-4 border-t border-gray-700">
             <dt className="font-bold">経歴</dt>
             <dd className="md:col-span-2 sm:mt-1 md:mt-0">
               <p>新卒から製造業勤務で品質保証・品質管理など経験（14年）</p>
@@ -35,7 +35,7 @@ const ProfilePage = () => {
               <p>フリーランスに転向、Webサイトの新規制作や改修（40歳）</p>
             </dd>
           </div>
-          <div className="py-8 grid-cols-1 grid md:grid-cols-3 md:gap-4 border-t border-gray-700">
+          <div className="px-2 py-8 grid-cols-1 grid md:grid-cols-3 md:gap-4 border-t border-gray-700">
             <dt className="font-bold">アカウント</dt>
             <dd className="md:col-span-2 sm:mt-1 md:mt-0">
               <ul className="">
@@ -73,7 +73,7 @@ const ProfilePage = () => {
                 </ul>
               </dd>
             </div> */}
-          <div className="pt-8 grid-cols-1 grid md:grid-cols-3 md:gap-4 border-t border-gray-700">
+          <div className="px-2 pt-8 grid-cols-1 grid md:grid-cols-3 md:gap-4 border-t border-gray-700">
             <dt className="font-bold">当サイトのコンセプト</dt>
             <dd className="md:col-span-2 sm:mt-1 md:mt-0">
               プログラミングの学習方法や経験の中で得た知見、便利ツールなどを中心に発信するテックブログです。
