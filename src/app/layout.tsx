@@ -50,10 +50,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const header = (
     <header className="header bg-white">
-      <div className="flex items-center space-x-5 py-5 mx-auto max-w-6xl box-content pr-10 pl-10">
+      <div className="flex justify-center md:justify-normal items-center space-x-5 py-5 mx-auto max-w-6xl box-content pr-10 pl-10">
         <Link href={'/'} className="md:hover:text-gray-600">
           <h1 className="text-3xl font-bold">
-            <Image alt={siteName} src="/images/common/logo.png" width={150} height={40} />
+            <Image alt={siteName} src="/images/common/logo.png" width={180} height={48} />
           </h1>
         </Link>
       </div>

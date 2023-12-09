@@ -8,18 +8,25 @@ import Link from 'next/dist/client/link';
 import Image from 'next/image';
 
 class Burger extends React.Component {
-  showSettings(event: any) {
-    event.preventDefault();
+  // showSettings(event: any) {
+  //   event.preventDefault();
+  // }
+  
+  handleOnClose() {
+    this.setState({ areMenusOpen: false });
   }
 
   render() {
     return (
       <div className="md:hidden">
-        <Menu right customCrossIcon={<Image src="/images/common/cross.png" alt="✕" width="36" height="40" />}>
+        <Menu
+          right
+          customCrossIcon={<Image src="/images/common/cross.png" alt="✕" width="36" height="40" />}
+        >
           <Link id="home" className="" href="/">
             トップ
           </Link>
-          <Link id="profile" className="" href="/profile">
+          <Link id="profile" className="" href="/profile" onClick={this.handleOnClose}>
             プロフィール
           </Link>
           <Link id="contact" className="" href="/contact">
