@@ -36,11 +36,11 @@ $breakpoints: (
   }
 }
 
-.title {
-  font-size: 36px;
+.h1 {
+  font-size: 30px;
   font-weight: bold;
   text-align: center;
-  margin: 10px 0 50px;
+  margin: 10px 0;
   padding-right: 10px;
   padding-left: 10px;
   line-height: 1.5;
@@ -63,8 +63,7 @@ $breakpoints: (
   }
 
   h2 {
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 25px;
     margin: 20px 0 20px;
     padding-right: 10px;
     padding-left: 10px;
@@ -80,8 +79,7 @@ $breakpoints: (
   }
 
   h3 {
-    font-size: 26px;
-    font-weight: bold;
+    font-size: 20px;
     margin: 20px 0 20px;
     padding-right: 10px;
     padding-left: 10px;
