@@ -4,7 +4,7 @@ import '../app/styles/burger.css';
 import '../app/styles/globals.css';
 import { slide as Menu } from 'react-burger-menu';
 import React from 'react';
-import Link from 'next/dist/client/link';
+// import Link from 'next/dist/client/link';
 import Image from 'next/image';
 
 class Burger extends React.Component {
@@ -12,9 +12,9 @@ class Burger extends React.Component {
   //   event.preventDefault();
   // }
   
-  handleOnClose() {
-    this.setState({ areMenusOpen: false });
-  }
+  // handleOnClose() {
+  //   this.setState({ areMenusOpen: false });
+  // }
 
   render() {
     return (
@@ -23,19 +23,19 @@ class Burger extends React.Component {
           right
           customCrossIcon={<Image src="/images/common/cross.png" alt="✕" width="36" height="40" />}
         >
-          <Link id="home" className="" href="/">
+          <a id="home" className="" href="/">
             トップ
-          </Link>
-          <Link id="profile" className="" href="/profile" onClick={this.handleOnClose}>
+          </a>
+          <a id="profile" className="" href="/profile">
             プロフィール
-          </Link>
-          <Link id="contact" className="" href="/contact">
+          </a>
+          <a id="contact" className="" href="/contact">
             お問い合わせ
-          </Link>
-          <Link id="twitter" className="" href="" target="_blank" rel="noopener nofollow">
+          </a>
+          <a id="twitter" className="" href="" target="_blank" rel="noopener nofollow">
             Twitter
-          </Link>
-          <Link
+          </a>
+          <a
             id="github"
             className=""
             href="https://github.com/naohiko560"
@@ -43,7 +43,7 @@ class Burger extends React.Component {
             rel="noopener nofollow"
           >
             GitHub
-          </Link>
+          </a>
         </Menu>
       </div>
     );
