@@ -1,10 +1,13 @@
+/*=====================================================================
+# ハンバーガーメニュー
+==================================================================== */
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: absolute;
-  width: 36px;
-  height: 30px;
+  width: 26px;
+  height: 20px;
   right: 36px;
-  top: 25px;
+  top: 30px;
 }
 
 /* Color/shape of burger icon bars */
