@@ -1,12 +1,39 @@
-$sp: 767px;
+/*=====================================================================
+# ブレークポイント
+==================================================================== */
+@use "sass:map";
 
+$breakpoints: (
+  sp: "screen and (max-width: 768px)",
+  tab: "screen and (425px < width <= 768px)",
+  pc: "screen and (min-width: 769px)",
+  xl: "screen and (min-width: 1200px)",
+);
+
+@mixin mq($breakpoint: md) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/*=====================================================================
+# スタイル
+==================================================================== */
 .updatedAt {
   text-align: center;
+
+  @include mq (sp) {
+    font-size: 13px;
+  }
 }
 
 .category {
   text-align: center;
   margin-top: 0;
+
+  @include mq (sp) {
+    font-size: 13px;
+  }
 }
 
 .title {
@@ -18,18 +45,19 @@ $sp: 767px;
   padding-left: 10px;
   line-height: 1.5;
 
-  @media screen and (max-width: $sp) {
-    font-size: 28px;
-    margin-bottom: 20px;
+  @include mq (sp) {
+    font-size: 18px;
+    margin-bottom: 5px;
   }
 }
 
 .posts_inner {
+  // 投稿コンテンツ
   font-size: 19px;
   background-color: #fff;
   overflow-wrap: break-word;
 
-  @media screen and (max-width: $sp) {
+  @include mq (sp) {
     padding-right: 10px;
     padding-left: 10px;
   }
@@ -45,6 +73,10 @@ $sp: 767px;
     border-left: 10px solid blue;
     line-height: 1.5;
     background-color: #f7f7f7;
+
+    @include mq (sp) {
+      font-size: 18px;
+    }
   }
 
   h3 {
@@ -55,6 +87,10 @@ $sp: 767px;
     padding-left: 10px;
     border-left: 10px solid blue;
     line-height: 1.5;
+
+    @include mq (sp) {
+      font-size: 18px;
+    }
   }
 
   p {
@@ -62,11 +98,19 @@ $sp: 767px;
     letter-spacing: 0.2px;
     margin-top: 40px;
     margin-bottom: 40px;
+
+    @include mq (sp) {
+      font-size: 16px;
+    }
   }
 
   a {
     font-weight: bold;
     color: #337ab7;
+
+    @include mq (sp) {
+      font-size: 16px;
+    }
   }
 
   ol {
@@ -79,18 +123,32 @@ $sp: 767px;
 
   ul,
   ol {
-    padding: 50px;
+    padding: 40px 10px 36px 50px;
     margin-top: 20px;
     margin-bottom: 36px;
     background-color: #f8f9ff;
     border: dashed 1px #4865b2;
 
+    @include mq (sp) {
+      padding-left: 40px;
+      padding-right: 15px;
+    }
+
     li {
       margin-bottom: 10px;
+
+      @include mq (sp) {
+        font-size: 14px;
+      }
 
       &:last-child {
         margin-bottom: 0;
       }
     }
+  }
+
+  // コードスニペット
+  pre {
+    font-size: 15px;
   }
 }

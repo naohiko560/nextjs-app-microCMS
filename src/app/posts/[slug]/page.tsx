@@ -55,15 +55,16 @@ export default async function StaticDetailPage({ params: { slug } }: { params: {
   return (
     <div>
       <p className={styles.updatedAt}>更新日：{update}</p>
-      <p className={styles.category}>{data.category.name}</p>
       <h1 className={styles.title}>{data.title}</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${data.content}`,
-        }}
-        className={styles.posts_inner}
-      />
-      <a href="/">トップに戻る</a>
+      <p className={styles.category}>{data.category.name}</p>
+      <div className={styles.posts_inner}>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${data.content}`,
+          }}
+        />
+        <a href="/">トップに戻る</a>
+      </div>
     </div>
   );
 }
