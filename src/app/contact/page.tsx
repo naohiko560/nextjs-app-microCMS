@@ -1,15 +1,15 @@
 import '../styles/globals.css';
 
-// グーグルフォームの出力
+// SSGform実装
 const ContactPage = () => {
   return (
     <div>
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLScRNPUgNveGZ39s6GJfdU0pssX0t72ak-qstSKJHJY2mVmGKw/viewform?usp=sf_link"
-        width="100%"
-        height="1100"
-        className="bg-white"
-      ></iframe>
+      <form action={process.env.SSG_FORM} method="post">
+        <input type="text" name="お名前" required />
+        <input type="email" name="メールアドレス" required />
+        <textarea name="お問い合わせ内容" required></textarea>
+        <button type="submit">送信する</button>
+      </form>
     </div>
   );
 };
