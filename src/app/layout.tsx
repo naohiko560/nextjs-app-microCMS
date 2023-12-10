@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Burger from '../components/Burger';
 import GoogleAnalytics from '../components/GoogleAnalytics';
+import { Suspense } from 'react';
 
 /*=====================================================================
 # 各設定ここから
@@ -139,7 +140,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="ja">
-      <GoogleAnalytics />
+      <Suspense>
+        <GoogleAnalytics />
+      </Suspense>
       <body className="bg-gray-50">
         <Burger />
         <div className="box-content">
