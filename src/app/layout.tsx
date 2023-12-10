@@ -33,6 +33,10 @@ export const snsSet = {
 ==================================================================== */
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.URL ?? 'http://localhost:3000'),
+  robots: {
+    index: true,
+  },
   title: {
     default: siteName,
     template: `%s - ${siteName}`,
@@ -52,11 +56,6 @@ export const metadata: Metadata = {
     description: description,
     site: snsSet.x,
     creator: snsSet.x,
-  },
-  metadataBase: new URL(process.env.URL ?? 'http://localhost:3000'),
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 
