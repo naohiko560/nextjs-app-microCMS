@@ -19,6 +19,7 @@ jobs:
           MICROCMS_API_KEY: '${{ secrets.MICROCMS_API_KEY }}'
           NEXT_PUBLIC_GA_ID: '${{ secrets.NEXT_PUBLIC_GA_ID }}'
           URL: '${{ secrets.URL }}'
+          SSG_FORM: '${{ secrets.SSG_FORM }}'
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
