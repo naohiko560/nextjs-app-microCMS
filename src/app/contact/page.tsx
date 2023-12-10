@@ -5,9 +5,18 @@ const ContactPage = () => {
   return (
     <div>
       <form action={process.env.SSG_FORM} method="post">
-        <input type="text" name="お名前" required className="border-blue-400 " placeholder='お名前' />
-        <input type="email" name="メールアドレス" required className="border-blue-400" placeholder='メールアドレス' />
-        <textarea name="お問い合わせ内容" required className="border-blue-400" placeholder='お問い合わせ内容'></textarea>
+        <div>
+          <label htmlFor="name">お名前</label>
+          <input id="name" type="text" name="お名前" className="bg-blue-400" />
+        </div>
+        <div>
+          <label htmlFor="email">メールアドレス</label>
+          <input id="email" type="email" name="メールアドレス" className="bg-blue-400" />
+        </div>
+        <div>
+          <label htmlFor="textarea">お問い合わせ内容</label>
+          <textarea id="textarea" name="お問い合わせ内容" className="bg-blue-400"></textarea>
+        </div>
         <button type="submit">送信する</button>
       </form>
     </div>
