@@ -1,0 +1,33 @@
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card__items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cards__item {
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(17, 51, 72, 0.2);
+  color: #3c3c3c;
+  margin: 0 0 50px 50px;
+  padding: 20px 20px 22px 20px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  width: calc(33.33333333% - 50px * 2 / 3);
+
+  &:nth-child(3n + 1) {
+    margin-left: 0;
+  }
+}
+
+.card__img-wrapper {
+  margin: 0;
+
+  img {
+    max-width: 100%;
+  }
+}
