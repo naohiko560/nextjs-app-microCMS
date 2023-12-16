@@ -7,34 +7,6 @@ import 'highlight.js/styles/hybrid.css';
 import type { Metadata } from 'next';
 import Link from 'next/dist/client/link';
 
-// ビルド時、静的にルートを生成
-export async function generateStaticParams() {
-  const { contents } = await getList();
-
-  const paths = contents.map((data) => {
-    return {
-      slug: data.id,
-    };
-  });
-
-  return [...paths];
-}
-
-// 記事ごとにタイトル・ディスクリプションを設定
-export async function generateMetadata({
-  params: { slug },
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const data = await getDetail(slug);
-  const title = data.title;
-
-  return {
-    title: title,
-    description: title,
-  };
-}
-
 export default async function StaticDetailPage({ params: { slug } }: { params: { slug: string } }) {
   const data = await getDetail(slug);
   const updatedAt = data.updatedAt;
@@ -64,8 +36,36 @@ export default async function StaticDetailPage({ params: { slug } }: { params: {
             __html: `${data.content}`,
           }}
         />
-      <Link href="/">トップに戻る</Link>
+        <Link href="/">トップに戻る</Link>
       </div>
     </div>
   );
+}
+
+// ビルド時、静的にルートを生成
+export async function generateStaticParams() {
+  const { contents } = await getList();
+
+  const paths = contents.map((data) => {
+    return {
+      slug: data.id,
+    };
+  });
+
+  return [...paths];
+}
+
+// 記事ごとにタイトル・ディスクリプションを設定
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const data = await getDetail(slug);
+  const title = data.title;
+
+  return {
+    title: title,
+    description: title,
+  };
 }
