@@ -25,6 +25,27 @@ export const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY,
 });
 
+// カテゴリ一覧を取得
+export const getCategories = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Blog>({
+    endpoint: 'categories',
+    queries,
+  });
+
+  return listData;
+};
+
+// 記事のカテゴリを取得
+// export const getCategory = async (queries?: MicroCMSQueries) => {
+
+//   const categoryId = await client.getList<Blog>({
+//     endpoint: 'blogs',
+//     queries: { filters: `category[equals]content_id` },
+//   });
+
+//   return categoryId;
+// };
+
 // ブログ一覧を取得
 export const getList = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<Blog>({
