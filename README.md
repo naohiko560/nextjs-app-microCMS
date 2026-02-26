@@ -38,7 +38,7 @@ https://nextjs-app-micro-cms.web.app/
 | カテゴリ          | 技術スタック                                     |
 | ----------------- | --------------------------------------------------   |
 | フロントエンド          | TypeScript, Next.js, tailwind CSS                       |
-| インフラ    | firebase                          |
+| インフラ    | Firebase                          |
 | CI/CD             | GitHub Actions                                       |
 | デザイン            | Figma                                         |
 | その他              | Git, GitHub, microCMS, ESLint, Prettier |
